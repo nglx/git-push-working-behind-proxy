@@ -10,7 +10,9 @@ http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.3.1-preview201010
 Setup the 'home' system variable and point it to the directory where with .ssh dir
 
 Download the connect.c tool (http://bent.latency.net/bent/darcs/goto-san-connect-1.85/src/connect.html).
+
 Precompiled binary can be found here: http://bent.latency.net/bent/darcs/goto-san-connect-1.85/src/connect.html
+
 Put the following content in '.ssh/config' file:
 
     ProxyCommand C:/connect.exe -H user@proxy_address:proxy_port %h %p
