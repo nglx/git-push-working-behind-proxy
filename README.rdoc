@@ -1,1 +1,34 @@
-Working!
+=Github push working behind http proxy
+
+==Installation
+
+Download and install git for windows (msysgit) from:
+http://code.google.com/p/msysgit/downloads/detail?name=Git-1.7.3.1-preview20101002.exe&can=2&q=
+
+==Setup
+
+Setup the 'home' system variable and point it to the directory where with .ssh dir
+
+Download the connect.c tool (http://bent.latency.net/bent/darcs/goto-san-connect-1.85/src/connect.html).
+Precompiled binary can be found here: http://bent.latency.net/bent/darcs/goto-san-connect-1.85/src/connect.html
+Put the following content in '.ssh/config' file:
+
+    ProxyCommand C:/connect.exe -H user@proxy_address:proxy_port %h %p
+
+    Host github.com
+    User git
+    Port 22
+    Hostname github.com
+    TCPKeepAlive yes
+    IdentitiesOnly yes
+
+    Host ssh.github.com
+    User git
+    Port 443
+    Hostname ssh.github.com
+    TCPKeepAlive yes
+    IdentitiesOnly yes
+
+Setup your private/public github keys as usual.
+
+Enjoy!
